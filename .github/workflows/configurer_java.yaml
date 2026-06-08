@@ -10,7 +10,7 @@ jobs:
     - name: Configurer JDK 21
       uses: action/setup-java@v4
       with:
-        java-version: 21
+        java-version: '21'
         distribution: 'temurin'
         cache: 'maven'
 
