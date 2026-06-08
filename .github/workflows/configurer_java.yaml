@@ -1,4 +1,4 @@
-name: Configuration java
+name: Configuration Java
 
 on:
   workflow_dispatch
@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Configurer JDK 21
-      uses: action/setup-java@5
+      uses: action/setup-java@v5
       with:
         java-version: 21
         distribution: 'temurin'
