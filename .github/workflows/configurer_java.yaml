@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Configurer JDK 21
-      uses: action/setup-java@v5
+      uses: action/setup-java@v4
       with:
         java-version: 21
         distribution: 'temurin'
