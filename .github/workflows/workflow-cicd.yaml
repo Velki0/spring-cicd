@@ -1,0 +1,29 @@
+name: Qualité de Code
+
+on:
+  push
+
+jobs:
+  affichage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: Configurer JDK 21
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Initialiser CodeQL
+        uses: github/codeql-action/init@v4
+        with:
+          languages: java-kotlin
+
+      - name: Construire Maven
+        run: mvn -B clean verify -Dspring.profiles.active=test -Dmaven.test.failure.ignore=true
+
+      - name: Analyser avec CodeQL
+        uses: github/codeql-action/analyse@v4
