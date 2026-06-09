@@ -39,3 +39,6 @@ jobs:
         with:
           name: jacoco-report
           path: target/site/jacoco
+
+      - name: Générer le site Maven
+        run: mvn site
